@@ -24,7 +24,7 @@
         } else {
             header('Location: ListaClientes.php');
         }
-    }
+    } 
 ?>
 
 
@@ -76,7 +76,8 @@
                                     <input type="text" class="inputNome" id="email" name="email" placeholder="E-mail" value="<?php echo $email ?>" required>
                                 </div>
                                 <br>
-                                <input type="submit" id="submit" value="Enviar">
+                                <input type="hidden" name="idcliente" value="<?php echo $idcliente ?>">
+                                <input type="submit" name="update" id="update">
                             </fieldset>
                         </form>
                     </div>

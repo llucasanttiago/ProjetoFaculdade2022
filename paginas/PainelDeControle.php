@@ -19,8 +19,7 @@
             <div class="container">
                 <div class="menu">
                     <a href="../paginas/AbaDeClientes.php"><img src="../imagens/client.png"><p>Clientes</p></a>
-                    <a href="../paginas/AbaDeProdutos.php"><img src="../imagens/cashier.png"><p>Produtos</p></a>                                        
-                    <a href="../paginas/AbaDeFornecedores.php"><img src="../imagens/truck.png"><p>Fornecedor</p></a>                  
+                    <a href="../paginas/AbaDeProdutos.php"><img src="../imagens/cashier.png"><p>Produtos</p></a>                                                         
                 </div>
             </div>
         </nav>

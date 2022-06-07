@@ -41,11 +41,21 @@ $result = $mysqli->query($sql);
                 padding: 5px;
             }
 
-            .img-acoes img{
+            .img-acoes-alterar img{
                 width: 20px;
                 background: blue;
                 border-radius: 3px;
             }
+
+            .img-acoes-lixeira img{
+                width: 20px;
+                background: red;
+                border-radius: 3px;
+            }
+
+            
+
+            
         </style>
     </head>
     <body>
@@ -82,7 +92,12 @@ $result = $mysqli->query($sql);
                                 echo "<td>" .$user_data['celular']."</td>";
                                 echo "<td>" .$user_data['email']."</td>";
                                 echo "<td>
-                                    <a class='img-acoes' href='frmDeCadastroDeClientesEdit.php?idcliente=$user_data[idcliente]'><img src='../imagens/pencil.png'></a>
+                                    <a class='img-acoes-alterar' href='frmDeCadastroDeClientesEdit.php?idcliente=$user_data[idcliente]'><img src='../imagens/pencil.png'></a>
+
+                                    <a class='img-acoes-lixeira' href=''><img src='../imagens/lixeira.png'>
+
+                                    </a>
+
                                 </td>";
                                 echo "</tr>";
                             }

@@ -23,11 +23,10 @@
                 </nav>
                 
                 <nav class="config-nav">
-                    <a href="ListaClientes.php"><img src="../imagens/list.png"><p>Listar</p></a>
                     <a href="frmDePesquisaDeClientes.php"><img src="../imagens/search.png"><p>Pesquisar</p></a>
                     <a href="frmDeCadastroDeClientes.php"><img src="../imagens/cadastre.png"><p>Cadastrar</p></a>                    
-                    <a href="paginas/estoque.html"><img src="../imagens/update.png"><p>Alterar</p></a>                    
-                    <a href="paginas/fornecedor.html"><img src="../imagens/delete.png"><p>Excluir</p></a>
+                    <a href="frmDeCadastroDeClientesEdit.php"><img src="../imagens/update.png"><p>Alterar</p></a>                    
+                    <a href="DeletarClientes.php"><img src="../imagens/delete.png"><p>Excluir</p></a>
                 </nav>
             </div>
         </nav>

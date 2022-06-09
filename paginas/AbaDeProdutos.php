@@ -23,10 +23,10 @@
                 </nav>
                 
                 <nav class="config-nav">
-                    <a href="frmPesquisarClientes.html"><img src="../imagens/search.png"><p>Pesquisar</p></a>
-                    <a href="frm_Clientes.html"><img src="../imagens/cadastre.png"><p>Cadastrar</p></a>                    
-                    <a href="paginas/estoque.html"><img src="../imagens/update.png"><p>Alterar</p></a>                    
-                    <a href="paginas/fornecedor.html"><img src="../imagens/delete.png"><p>Excluir</p></a>
+                    <a href="ListarProdutos.php"><img src="../imagens/search.png"><p>Pesquisar</p></a>
+                    <a href="CadastroDeProdutos.php"><img src="../imagens/cadastre.png"><p>Cadastrar</p></a>                    
+                    <a href="AlterarProdutos.php"><img src="../imagens/update.png"><p>Alterar</p></a>                    
+                    <a href="DeletarProdutos.php"><img src="../imagens/delete.png"><p>Excluir</p></a>
                 </nav>
             </div>
         </nav>

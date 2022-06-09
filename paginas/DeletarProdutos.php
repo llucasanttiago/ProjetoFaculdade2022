@@ -2,7 +2,7 @@
 session_start();
 include_once('conexao.php');
 
-$sql = "SELECT * FROM cliente ORDER BY idcliente DESC";
+$sql = "SELECT * FROM produtos ORDER BY idproduto DESC";
 
 $result = $mysqli->query($sql);
 
@@ -11,7 +11,7 @@ $result = $mysqli->query($sql);
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Lista de Clientes</title>
+        <title>Lista de Produtos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
@@ -70,29 +70,27 @@ $result = $mysqli->query($sql);
                 <table>
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Codigo</th>
                             <th>Nome</th>
-                            <th>CPF</th>
-                            <th>RG</th>
-                            <th>Endereço</th>
-                            <th>Celular</th>
-                            <th>E-mail</th>
+                            <th>Descrições</th>
+                            <th>Marca</th>
+                            <th>Preço</th>
                         </tr>
-                        
                     </thead>
-                    
                     <tbody>
                         <?php
                             while($user_data = mysqli_fetch_assoc($result)){
                                 echo "<tr>";
-                                echo "<td>" .$user_data['idcliente']."</td>";
+                                echo "<td>" .$user_data['codigo']."</td>";
                                 echo "<td>" .$user_data['nome']."</td>";
-                                echo "<td>" .$user_data['cpf']."</td>";
-                                echo "<td>" .$user_data['rg']."</td>";
-                                echo "<td>" .$user_data['endereco']."</td>";
-                                echo "<td>" .$user_data['celular']."</td>";
-                                echo "<td>" .$user_data['email']."</td>";
-                               
+                                echo "<td>" .$user_data['descricao']."</td>";
+                                echo "<td>" .$user_data['marca']."</td>";
+                                echo "<td>" .$user_data['preco']."</td>";
+                                echo "<td>
+                                    <a class='img-acoes-lixeira' href='DeletarProdutosConfig.php?idproduto=$user_data[idproduto]'><img src='../imagens/lixeira.png'>
+                                    </a>
+
+                                </td>";
                                 echo "</tr>";
                             }
                         ?>

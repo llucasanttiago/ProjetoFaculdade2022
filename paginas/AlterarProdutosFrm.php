@@ -1,28 +1,27 @@
 <?php
 
-    if(!empty($_GET['idcliente']))
+    if(!empty($_GET['idproduto']))
     {
         include_once('conexao.php');
 
-        $idcliente = $_GET['idcliente'];
+        $idproduto = $_GET['idproduto'];
 
-        $sqlSelect = "SELECT * FROM cliente WHERE idcliente=$idcliente";
+        $sqlSelect = "SELECT * FROM produtos WHERE idproduto=$idproduto";
 
         $result = $mysqli->query($sqlSelect);
 
         if($result->num_rows > 0){
 
             while($user_data = mysqli_fetch_assoc($result)){
+                $codigo = $user_data["codigo"];
                 $nome = $user_data["nome"];
-                $cpf = $user_data["cpf"];
-                $rg = $user_data["rg"];
-                $endereco = $user_data["endereco"];
-                $celular = $user_data["celular"];
-                $email = $user_data["email"];
+                $descricao = $user_data["descricao"];
+                $marca = $user_data["marca"];
+                $preco = $user_data["preco"];
             }
             
         } else {
-            header('Location: frmDeCadastroDeClientesEdit.php');
+            header('Location: AlterarProdutos.php');
         }
     } 
 ?>
@@ -31,7 +30,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastro de Clientes</title>
+        <title>Alterar Produto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
@@ -48,35 +47,31 @@
             <div class="container">
                 <div class="menu">
                     <div class="formulario-clientes">
-                    <form action="saveEditFormClientes.php" method="POST">
+                    <form action="AlterarProdutosConfig.php" method="POST">
                             <fieldset>
-                                <legend><b>Formulário de Clientes</b></legend>
+                                <legend><b>Formulário de Produtos</b></legend>
 
                                 <div class="input-cadastro-clientes">
-                                    <input type="text" class="inputNome" id="nome" name="nome" placeholder="Nome" value="<?php echo $nome ?>" required>
+                                    <input type="text" class="inputNome" id="codigo" name="codigo" placeholder="Codigo do produto" value="<?php echo $codigo ?>" required>
                                 </div>
                                 <br>
                                 <div class="input-cadastro-clientes">
-                                    <input type="text" class="inputNome" id="cpf" name="cpf" placeholder="CPF" value="<?php echo $cpf ?>"required>
+                                    <input type="text" class="inputNome" id="nome" name="nome" placeholder="Nome" value="<?php echo $nome ?>"required>
                                 </div>      
                                 <br>
                                 <div class="input-cadastro-clientes">
-                                    <input type="text" class="inputNome" id="rg" name="rg" placeholder="RG" value="<?php echo $rg ?>" required>
+                                    <input type="text" class="inputNome" id="descricao" name="descricao" placeholder="Descrições" value="<?php echo $descricao ?>" required>
                                 </div>
                                 <br>
                                 <div class="input-cadastro-clientes">
-                                    <input type="text" class="inputNome" id="endereco" name="endereco" placeholder="Endereço" value="<?php echo $endereco ?>" required>
+                                    <input type="text" class="inputNome" id="marca" name="marca" placeholder="Marca" value="<?php echo $marca ?>" required>
                                 </div>
                                 <br>
                                 <div class="input-cadastro-clientes">
-                                    <input type="text" class="inputNome" id="celular" name="celular" placeholder="Celular" value="<?php echo $celular ?>" required>
+                                    <input type="text" class="inputNome" id="preco" name="preco" placeholder="Preço" value="<?php echo $preco ?>" required>
                                 </div>
                                 <br>
-                                <div class="input-cadastro-clientes">
-                                    <input type="text" class="inputNome" id="email" name="email" placeholder="E-mail" value="<?php echo $email ?>" required>
-                                </div>
-                                <br>
-                                <input type="hidden" name="idcliente" value="<?php echo $idcliente ?>">
+                                <input type="hidden" name="idproduto" value="<?php echo $idproduto ?>">
                                 <input type="submit" name="update" id="update">
                             </fieldset>
                         </form>

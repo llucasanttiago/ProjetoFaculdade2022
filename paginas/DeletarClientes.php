@@ -70,29 +70,27 @@ $result = $mysqli->query($sql);
                 <table>
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Codigo</th>
                             <th>Nome</th>
-                            <th>CPF</th>
-                            <th>RG</th>
-                            <th>Endereço</th>
-                            <th>Celular</th>
-                            <th>E-mail</th>
+                            <th>Descrições</th>
+                            <th>Marca</th>
+                            <th>Preço</th>
                         </tr>
-                        
                     </thead>
-                    
                     <tbody>
                         <?php
                             while($user_data = mysqli_fetch_assoc($result)){
                                 echo "<tr>";
-                                echo "<td>" .$user_data['idcliente']."</td>";
+                                echo "<td>" .$user_data['codigo']."</td>";
                                 echo "<td>" .$user_data['nome']."</td>";
-                                echo "<td>" .$user_data['cpf']."</td>";
-                                echo "<td>" .$user_data['rg']."</td>";
-                                echo "<td>" .$user_data['endereco']."</td>";
-                                echo "<td>" .$user_data['celular']."</td>";
-                                echo "<td>" .$user_data['email']."</td>";
-                               
+                                echo "<td>" .$user_data['descricao']."</td>";
+                                echo "<td>" .$user_data['marca']."</td>";
+                                echo "<td>" .$user_data['preco']."</td>";
+                                echo "<td>
+                                    <a class='img-acoes-lixeira' href='DeletarProdutosConfig.php?codigo=$user_data[codigo]'><img src='../imagens/lixeira.png'>
+                                    </a>
+
+                                </td>";
                                 echo "</tr>";
                             }
                         ?>
